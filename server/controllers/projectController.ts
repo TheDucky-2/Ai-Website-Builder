@@ -2,6 +2,7 @@ import {Request, Response} from 'express';
 import { prisma } from '../lib/prisma.ts';
 import openai from "../config/openai.ts";
 import config from '../config/config.ts';
+import type { Version } from '../generated/prisma/client.ts';
 
 // Function to make revision
 
@@ -229,7 +230,7 @@ export const rollbackToVersion = async (req: Request, res: Response) => {
             })
         }
 
-        const version = project.versions.find((ver)=> ver.id === versionId)
+        const version = project.versions.find((ver:Version)=> ver.id === versionId)
         
         if(!version){
             return res.status(404).json({
