@@ -2,8 +2,6 @@ import { AccountSettingsCards } from "@daveyplate/better-auth-ui";
 import { ChangePasswordCard } from "@daveyplate/better-auth-ui";
 import { DeleteAccountCard } from "@daveyplate/better-auth-ui"
 
-import React from 'react'
-
 const Settings = () => {
   return (
     <div className="w-full p-4 flex justify-center items-center min-h-[90vh] flex-col gap-6 py-12">

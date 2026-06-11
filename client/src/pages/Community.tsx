@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type {Project}  from '../types/index.ts';
-import { Loader2Icon, PlusIcon, TrashIcon } from 'lucide-react';
+import { Loader2Icon} from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import api from '@/configs/axios.ts';
 import Footer from '../components/Footer.tsx';

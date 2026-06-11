@@ -1,4 +1,4 @@
-import React, { useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import type { ProjectPreviewProps } from '../types/index.ts';
 import { iframeScript } from '../assets/assets.ts';
 import EditorPanel from './EditorPanel.tsx';

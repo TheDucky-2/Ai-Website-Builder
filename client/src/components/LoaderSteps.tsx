@@ -1,5 +1,5 @@
 import { ScanLineIcon, SquareIcon, TriangleIcon, CircleIcon } from 'lucide-react'
-import React, {useEffect, useState} from 'react'
+import {useEffect, useState} from 'react'
 
 
 const loadingSteps = [
