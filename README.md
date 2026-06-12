@@ -42,8 +42,17 @@ Users can authenticate securely, describe the website they want and instantly ge
 
 * PostgreSQL database hosted on Neon
 * Express.js REST API
-* Secure backend authentication integration
+* Secure API integration
 * Scalable architecture
+
+### Payment Processing
+
+- Secure payments powered by Stripe
+- Stripe Checkout integration
+- Webhook-based payment verification
+- Automated transaction recording
+- Subscription and plan management
+- Real-time payment status updates
 
 ---
 
@@ -81,16 +90,45 @@ Users can authenticate securely, describe the website they want and instantly ge
 ## Project Architecture
 
 ```text
-Frontend (React + Vite)
+                    ┌──────────────────┐
+                    │ React + Vite UI  │
+                    │   (Frontend)     │
+                    └────────┬─────────┘
+                             │
+                             ▼
+                    ┌──────────────────┐
+                    │  Express.js API  │
+                    │    (Node.js)     │
+                    └───────┬──────────┘
+                            │
+       ┌────────────────────┼────────────────────┐
+       │                    │                    │
+       ▼                    ▼                    ▼
+
+┌─────────────┐    ┌─────────────┐    ┌─────────────┐
+│ Better Auth │    │ PostgreSQL  │    │ OpenRouter  │
+│ + Auth UI   │    │ + Prisma    │    │ AI Models   │
+└─────────────┘    └─────────────┘    └─────────────┘
+       │                    │
+       │                    │
+       ▼                    ▼
+┌─────────────┐    ┌─────────────┐
+│   Stripe    │    │ Website     │
+│  Checkout   │    │ Projects &  │
+└──────┬──────┘    │ Versions    │
+       │           └─────────────┘
+       ▼
+┌────────────────┐
+│ Stripe Webhook │
+└───────┬────────┘
         │
         ▼
-Backend API (Express + Node.js)
-        │
-        ▼
-Authentication (Better Auth)
-        │
-        ▼
-PostgreSQL Database (Neon)
+┌────────────────┐
+│ Subscription   │
+│ Management     │
+│ Transaction    │
+│ Verification   │
+└────────────────┘
 ```
 
 ---
