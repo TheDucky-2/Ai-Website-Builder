@@ -56,7 +56,7 @@ const DemoGuide = () => {
       </ol>
 
       <p className="text-sm text-yellow-400 bg-yellow-500/10 border border-yellow-500/30 p-3 rounded-md">
-        ⚠️ First generation may take a couple of seconds due to AI model response time.
+        ⚠️ AI generation may take a few moments depending on load, as we use free-tier OpenRouter models.
       </p>
     </section>
 
