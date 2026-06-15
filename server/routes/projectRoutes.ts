@@ -1,7 +1,7 @@
 import express from 'express';
-import { authenticate } from '../middlewares/auth.ts';
-import { deleteProject, getProjectById, getProjectPreview, getPublishedProjects, makeRevision, rollbackToVersion, saveProjectCode } from '../controllers/projectController.ts';
-import { getUserProject } from '../controllers/userController.ts';
+import { authenticate } from '../middlewares/auth.js';
+import { deleteProject, getProjectById, getProjectPreview, getPublishedProjects, makeRevision, rollbackToVersion, saveProjectCode } from '../controllers/projectController.js';
+import { getUserProject } from '../controllers/userController.js';
 
 const projectRouter = express.Router()
 

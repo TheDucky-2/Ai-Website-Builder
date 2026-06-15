@@ -1,7 +1,7 @@
 import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
-import {prisma} from "./prisma.ts"
-import config from "../config/config.ts";
+import {prisma} from "./prisma.js"
+import config from "../config/config.js";
 
 const trustedOrigins = config.TRUSTED_ORIGINS?.split(",") || []
 

@@ -3,9 +3,9 @@ import {
     createUserProject, getUserCredits, getUserProject,
     getUserProjects, purchaseCredits, togglePublish
     } 
-from "../controllers/userController.ts";
+from "../controllers/userController.js";
 
-import { authenticate } from "../middlewares/auth.ts";
+import { authenticate } from "../middlewares/auth.js";
 
 const userRouter = express.Router()
 

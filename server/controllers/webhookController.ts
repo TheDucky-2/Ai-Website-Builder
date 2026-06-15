@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import Stripe from "stripe";
-import config from "../config/config.ts";
-import {prisma} from "../lib/prisma.ts"
+import config from "../config/config.js";
+import {prisma} from "../lib/prisma.js"
 
 export const stripeWebhook = async(request:Request, response:Response) => {
 

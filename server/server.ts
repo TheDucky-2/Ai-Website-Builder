@@ -1,11 +1,11 @@
 import express, {Request, Response} from'express';
-import config from './config/config.ts';
+import config from './config/config.js';
 import cors from 'cors';
 import { toNodeHandler } from "better-auth/node";
-import { auth } from "./lib/auth.ts";
-import userRouter from './routes/userRoutes.ts';
-import projectRouter from './routes/projectRoutes.ts';
-import { stripeWebhook } from './controllers/webhookController.ts';
+import { auth } from "./lib/auth.js";
+import userRouter from './routes/userRoutes.js';
+import projectRouter from './routes/projectRoutes.js';
+import { stripeWebhook } from './controllers/webhookController.js';
 
 const app = express();
 

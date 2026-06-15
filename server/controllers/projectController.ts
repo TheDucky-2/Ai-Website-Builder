@@ -1,7 +1,7 @@
 import {Request, Response} from 'express';
-import { prisma } from '../lib/prisma.ts';
-import openai from "../config/openai.ts";
-import config from '../config/config.ts';
+import { prisma } from '../lib/prisma.js';
+import openai from "../config/openai.js";
+import config from '../config/config.js';
 import type { Version } from '../generated/prisma/client.ts';
 
 // Function to make revision

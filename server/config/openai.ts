@@ -1,5 +1,5 @@
 import {OpenAI} from 'openai';
-import config from './config.ts';
+import config from './config.js';
 
 
 const openai = new OpenAI({
