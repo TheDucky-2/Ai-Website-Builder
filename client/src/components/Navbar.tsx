@@ -47,6 +47,7 @@ const Navbar = () => {
             <Link to="/projects" className="hover:text-slate-300 transition">My Projects</Link>
             <Link to="/community" className="hover:text-slate-300 transition">Community</Link>
             <Link to="/pricing" className="hover:text-slate-300 transition">Pricing</Link>
+            <Link to="/demo-guide" className="hover:text-slate-300 transition">Demo Guide</Link>
           </div>
 
           <div className="flex items-center gap-3">
@@ -83,7 +84,7 @@ const Navbar = () => {
             <Link to="/projects" onClick={() => setMenuOpen(false)}> My Projects </Link>
             <Link to="/community" onClick={() => setMenuOpen(false)}> Community </Link>
             <Link to="/pricing" onClick={() => setMenuOpen(false)}> Pricing </Link>
-            
+            <Link to="/demo-guide" onClick={() => setMenuOpen(false)}> Demo Guide </Link>
             <button 
             className="active:ring-3 active:ring-white aspect-square size-10 p-1 items-center justify-center bg-slate-100 hover:bg-slate-200 transition text-black rounded-md flex" 
             onClick={() => setMenuOpen(false)} >

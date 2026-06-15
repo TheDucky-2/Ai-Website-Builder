@@ -11,6 +11,7 @@ import { Toaster} from 'sonner';
 import AuthPage from './pages/auth/AuthPage.tsx';
 import Settings from './pages/Settings.tsx';
 import Loading from './pages/Loading.tsx';
+import DemoGuide from './pages/DemoGuide.tsx';
 
 const App = () => {
 
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/auth/:pathname" element = {<AuthPage/>}/>
         <Route path="/account/settings" element = {<Settings/>}/>
         <Route path="/loading" element = {<Loading/>}/>
+        <Route path="/demo-guide" element={<DemoGuide/>}/>
       </Routes>
     </div>
   )
