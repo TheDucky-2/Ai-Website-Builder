@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './genie.ai_logo.png';
 
 export const assets = {
     logo,

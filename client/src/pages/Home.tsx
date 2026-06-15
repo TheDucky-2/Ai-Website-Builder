@@ -41,12 +41,12 @@ const Home = () => {
 
   return (
 
-      <section className="flex flex-col items-center text-white text-sm pb-20 px-4 font-poppins">
+      <section className="flex flex-col items-center text-white text-sm pb-20 px-4 font-poppins gap-3">
 
           {/* BACKGROUND IMAGE */}
           <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/refs/heads/main/assets/hero/bg-gradient-2.png" className="absolute inset-0 -z-10 size-full opacity" alt="" />
 
-        <a href="https://prebuiltui.com" className="flex items-center gap-2 border border-slate-700 rounded-full p-1 pr-3 text-sm mt-20">
+        <a href={`${import.meta.env.VITE_APPURL}/auth/sign-up`} className="flex items-center gap-2 border border-slate-700 rounded-full p-1 pr-3 text-sm mt-20">
           <span className="bg-indigo-600 text-xs px-3 py-1 rounded-full">NEW</span>
           <p className="flex items-center gap-2">
             <span>Try 30 days free trial option</span>
@@ -55,7 +55,7 @@ const Home = () => {
         </a>
 
         <h1 className="text-center text-[40px] leading-12 md:text-6xl md:leading-17.5 mt-4 font-semibold max-w-3xl">
-          Turn thoughts into websites instantly, with AI.
+          Turn your thoughts into websites instantly, with AI.
         </h1>
 
         <p className="text-center text-base max-w-md mt-2">
