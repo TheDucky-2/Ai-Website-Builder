@@ -38,7 +38,7 @@ const MyProjects = () => {
 
         if(!confirmation) return ;
 
-        const {data} = await api.delete(`/user/project/${projectId}`)
+        const {data} = await api.delete(`/project/${projectId}`)
         toast.success(data.message);
         fetchProjects(); // showing all projects after deleting the project
 
@@ -83,7 +83,7 @@ const MyProjects = () => {
         <div className='flex flex-wrap gap-3.5'>
           {projects.map((project)=> (
 
-            <div key={project.id} onClick={()=> navigate(`/project/${project.id}`)}
+            <div key={project.id} onClick={()=> navigate(`/projects/${project.id}`)}
             className='relative group w-72 max-sm:max-auto cursor-pointer bg-gray-900/60 border border-gray-700 rounded-lg overflow-hidden
             shadow-md group hover:shadow-indigo-700/30 hover:border-indigo-800/80 transition-all duration-300'>
 

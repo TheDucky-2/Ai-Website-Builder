@@ -282,7 +282,7 @@ export const deleteProject = async(req: Request, res:Response)=> {
 
         const project_id = Array.isArray(projectId) ? projectId[0] : projectId
 
-        const project = await prisma.websiteProject.delete({
+        await prisma.websiteProject.delete({
             where: {id: project_id, userId}
         })
 

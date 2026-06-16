@@ -11,7 +11,7 @@ const userRouter = express.Router()
 
 userRouter.get("/credits", authenticate,  getUserCredits)
 userRouter.post("/project",authenticate, createUserProject)
-userRouter.get("/project/:projectId", authenticate, getUserProject)
+userRouter.get("/projects/:projectId", authenticate, getUserProject)
 userRouter.get("/projects", authenticate, getUserProjects)
 userRouter.get("/publish-toggle/:projectId", authenticate, togglePublish)
 userRouter.post("/purchase-credits", authenticate, purchaseCredits)

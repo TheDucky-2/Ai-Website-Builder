@@ -72,6 +72,10 @@ export const createUserProject = async (req: Request, res: Response) => {
             }
         })
 
+        res.json({
+            projectId: project.id
+        })
+
         // Updating user's total creation
 
         await prisma.user.update({
@@ -245,11 +249,6 @@ export const createUserProject = async (req: Request, res: Response) => {
         })
 
         console.log("1. Project created");
-
-        res.json({
-            projectId: project.id
-        })
-        console.log("Response sent");
 
     }catch(error:any){
 
