@@ -343,12 +343,6 @@ export const getProjectPreview = async(req: Request, res:Response)=> {
 export const getPublishedProjects = async(req: Request, res:Response)=> {
 
     try{
-        const userId = req.userId;
-
-        if(!userId){
-            return res.status(401).json({message: "Unauthorized"});
-        }
-
         const projects = await prisma.websiteProject.findMany({
             where: {isPublished: true},
             include: {
@@ -380,12 +374,8 @@ export const getPublishedProjects = async(req: Request, res:Response)=> {
 export const getProjectById = async(req: Request, res:Response)=> {
 
     try{
-        const userId = req.userId;
         const {projectId} = req.params;
 
-        if(!userId){
-            return res.status(401).json({message: "Unauthorized"});
-        }
 
         const project_id = Array.isArray(projectId) ? projectId[0] : projectId
 

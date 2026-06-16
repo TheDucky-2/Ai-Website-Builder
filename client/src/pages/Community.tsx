@@ -49,7 +49,7 @@ const Community = () => {
         <div className='flex flex-wrap gap-3.5'>
           {projects.map((project)=> (
 
-            <Link to={`view/${project.id}`} target="_blank"  key={project.id} 
+            <Link to={`/view/${project.id}`} target="_blank"  key={project.id} 
             className='w-72 max-sm:max-auto cursor-pointer bg-gray-900/60 border border-gray-700 rounded-lg overflow-hidden
             group hover:border-indigo-800/80 transition-all duration-300'>
 

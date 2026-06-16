@@ -29,7 +29,7 @@ const Home = () => {
       const {data} = await api.post("/user/project", {initial_prompt: input});
       setLoading(false);
 
-      navigate(`/project/${data.projectId}`)
+      navigate(`/projects/${data.projectId}`)
 
     }catch(error:any){
       setLoading(false)

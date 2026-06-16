@@ -10,7 +10,7 @@ const Footer = () => {
             `}</style>
             
             <footer className="flex flex-col mt-24 md:flex-row gap-3 items-center justify-center w-full py-4 text-sm bg-black text-white/70 border-t border-gray-800">
-                <p>Copyright © 2026 AI Website Builder. All rights reserved.</p>
+                <p>Copyright © 2026 Genie.AI Website Builder. All rights reserved. </p>
             </footer>
         </>
   )

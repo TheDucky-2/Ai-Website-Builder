@@ -13,7 +13,7 @@ userRouter.get("/credits", authenticate,  getUserCredits)
 userRouter.post("/project",authenticate, createUserProject)
 userRouter.get("/projects/:projectId", authenticate, getUserProject)
 userRouter.get("/projects", authenticate, getUserProjects)
-userRouter.get("/publish-toggle/:projectId", authenticate, togglePublish)
+userRouter.get("/project/publish-toggle/:projectId", authenticate, togglePublish)
 userRouter.post("/purchase-credits", authenticate, purchaseCredits)
 
 

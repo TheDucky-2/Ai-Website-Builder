@@ -2,6 +2,7 @@ import { useEffect, useImperativeHandle, useRef, useState } from 'react';
 import type { ProjectPreviewProps } from '../types/index.ts';
 import { iframeScript } from '../assets/assets.ts';
 import EditorPanel from './EditorPanel.tsx';
+import LoaderSteps from './LoaderSteps.tsx';
 
 /*
 export interface ProjectPreviewRef{
@@ -101,7 +102,7 @@ const ProjectPreview = ({project, isGenerating, device="desktop", showEditorPane
 
 
   return (
-    <div className='relative h-full bg-gray-900 flex-1 rounded-xl overflow-hidden max:sm-ml-2'>
+    <div className='relative h-screen bg-gray-900 flex-1 rounded-xl overflow-hidden max:sm-ml-2'>
       {project.current_code ? (
         <>
         <iframe ref = {iframeRef} srcDoc={injectPreview(project.current_code)} className={`h-full mx:sm:w-full ${resolutions[device]} mx-auto transition-all`}/>
@@ -125,9 +126,8 @@ const ProjectPreview = ({project, isGenerating, device="desktop", showEditorPane
 
 
       ): isGenerating && ( 
-        <div>
-          loading
-        </div>
+
+          <LoaderSteps/>
       )}
 
     </div>
