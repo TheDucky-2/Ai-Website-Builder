@@ -3,7 +3,7 @@ import config from './config.js';
 
 
 const openai = new OpenAI({
-  baseURL: "https://openrouter.ai/api/v1",
+  baseURL: 'https://openrouter.ai/api/v1',
   apiKey: config.OPENROUTER_API_KEY,
 
 });

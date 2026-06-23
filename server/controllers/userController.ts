@@ -139,7 +139,7 @@ export const createUserProject = async (req: Request, res: Response) => {
         await prisma.conversation.create({
             data: {
                 role: "assistant",
-                content: `I've enchaned your prompt to: ${enhancedPrompt}`,
+                content: `I've enhanced your prompt to: ${enhancedPrompt}`,
                 projectId:project.id
             }
         })
@@ -157,37 +157,118 @@ export const createUserProject = async (req: Request, res: Response) => {
 
         console.log("5. Generating code");  
 
-        const codeGenerationResponse = openai.chat.completions.create({
+        const codeGenerationResponse = await openai.chat.completions.create({
             model: `${config.AI_MODEL}`,
             messages: [
             {
                 role: "system",
                 content: `
                 
-            You are an expert web developer. Create a complete, production-ready, single-page website based on this request: "${enhancedPrompt}"
+            You are a world-class senior frontend engineer and UI designer working at a top-tier SaaS company like Stripe, Linear, and Vercel.
 
-            CRITICAL REQUIREMENTS:
-            - You MUST output valid HTML ONLY. 
-            - Use Tailwind CSS for ALL styling
-            - Include this EXACT script in the <head>: <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-            - Use Tailwind utility classes extensively for styling, animations, and responsiveness
-            - Make it fully functional and interactive with JavaScript in <script> tag before closing </body>
-            - Use modern, beautiful design with great UX using Tailwind classes
-            - Make it responsive using Tailwind responsive classes (sm:, md:, lg:, xl:)
-            - Use Tailwind animations and transitions (animate-*, transition-*)
-            - Include all necessary meta tags
-            - Use Google Fonts CDN if needed for custom fonts
-            - Use placeholder images from https://placehold.co/600x400
-            - Use Tailwind gradient classes for beautiful backgrounds
-            - Make sure all buttons, cards, and components use Tailwind styling
+            Your job is to generate a SINGLE, complete, production-quality, responsive landing page using ONLY HTML + Tailwind CSS + minimal vanilla JavaScript.
 
-            CRITICAL HARD RULES:
-            1. You MUST put ALL output ONLY into message.content.
-            2. You MUST NOT place anything in "reasoning", "analysis", "reasoning_details", or any hidden fields.
-            3. You MUST NOT include internal thoughts, explanations, analysis, comments, or markdown.
-            4. Do NOT include markdown, explanations, notes, or code fences.
+            You are NOT allowed to be creative with layout structure. You MUST follow strict UI rules and design systems.
 
-            The HTML should be complete and ready to render as-is with Tailwind CSS.`
+            ---
+
+            # CORE OBJECTIVE
+            Convert the user request into a beautiful, high-conversion SaaS landing page that looks like a real startup product.
+
+            ---
+
+            # STRICT PAGE STRUCTURE (DO NOT CHANGE ORDER)
+
+            You MUST include ONLY these sections in this order:
+
+            1. Navbar (simple, clean, sticky)
+            2. Hero section (value proposition + CTA)
+            3. Features section (3–6 features max)
+            4. Social proof / stats section
+            5. Testimonials section
+            6. Pricing section (3 tiers max)
+            7. FAQ section (accordion allowed)
+            8. Final CTA section
+            9. Footer
+
+            Do NOT add extra sections.
+
+            ---
+
+            # DESIGN SYSTEM (VERY IMPORTANT)
+
+            Follow this design system strictly:
+
+            - Style: modern SaaS (Stripe / Linear / Vercel aesthetic)
+            - Max width: max-w-7xl centered layout
+            - Background: clean white or subtle gray (no heavy gradients)
+            - Primary color: use ONE accent color consistently
+            - Spacing: generous whitespace (py-20 md:py-28 between sections)
+            - Cards: rounded-2xl with subtle border (border-gray-100)
+            - Shadows: minimal (shadow-sm only, no heavy shadows)
+
+            Typography:
+            - Hero title: text-5xl md:text-7xl font-bold tracking-tight
+            - Section title: text-3xl md:text-5xl font-bold
+            - Body text: text-gray-600 leading-relaxed
+
+            ---
+
+            # HARD CONSTRAINTS
+
+            - Output ONLY valid HTML (no markdown, no explanations)
+            - Use Tailwind CSS via: <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+            - No external frameworks (no React, no Vue)
+            - No inline CSS
+            - No excessive animations
+            - No chaotic gradients
+            - No random colors
+            - No custom design systems
+
+            ---
+
+            # CONTENT RULES
+
+            - Keep text professional and startup-focused
+            - Avoid overly long paragraphs
+            - Use short, high-impact copywriting
+            - Make CTAs clear (e.g. "Get Started", "Book a Demo")
+
+            ---
+
+            # RESPONSIVENESS RULES
+
+            - Must be fully mobile-first
+            - Use Tailwind responsive classes (sm:, md:, lg:)
+            - Ensure no horizontal scrolling on mobile
+            - Buttons must be full-width on mobile where appropriate
+
+            ---
+
+            # INTERACTIVITY RULES
+
+            Use minimal JavaScript ONLY for:
+            - FAQ accordion
+            - simple navbar toggle (if needed)
+
+            No complex logic.
+
+            ---
+
+            # IMAGES
+
+            - Use placeholder images only from: https://placehold.co/600x400
+            - Prefer minimal images (do not overuse)
+
+            ---
+
+            # ⚡ FINAL OUTPUT RULE
+
+            Return ONLY the final HTML document.
+
+            No explanations. No markdown. No comments.
+
+            The output must be production-ready and visually polished.`
             },
 
             {
@@ -212,7 +293,7 @@ export const createUserProject = async (req: Request, res: Response) => {
             data: {credits: {increment: 5}}
         })
 
-        return
+        return;
     }
 
         console.log("6. Code generated");

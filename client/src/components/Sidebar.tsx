@@ -15,7 +15,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
   const fetchProject = async() => {
     try{
 
-        const {data} = await api.get(`/user/project/${project.id}`)
+        const {data} = await api.get(`/user/projects/${project.id}`)
         setProject(data.project)
         
     }catch(error:any){
@@ -36,7 +36,7 @@ const Sidebar = ({isMenuOpen, project, setProject, isGenerating, setIsGenerating
         setIsGenerating(true);
         const {data} = await api.get(`/project/rollback/${project.id}/${versionId}`)
 
-        const {data: data2} = await api.get(`/user/project/${project.id}`)
+        const {data: data2} = await api.get(`/user/projects/${project.id}`)
 
         toast.success(data.message)
         setProject(data2.project)

@@ -1,4 +1,4 @@
-# AI Website Builder
+# Genie.AI
 
 An AI-powered full-stack website builder that enables users to generate, customize and manage websites through natural language prompts.
 
@@ -6,7 +6,7 @@ An AI-powered full-stack website builder that enables users to generate, customi
 
 AI Website Builder is a modern SaaS platform that combines artificial intelligence with a powerful website generation engine. 
 
-Users can authenticate securely, describe the website they want and instantly generate website versions that can be iterated on, manually or through AI-assisted updates.
+Users can authenticate securely, describe the website they want and instantly generate website versions that can be iterated on, manually or via AI-assisted updates.
 
 ## Features
 
@@ -84,6 +84,15 @@ Users can authenticate securely, describe the website they want and instantly ge
 
 * OpenRouter
 * Large Language Models (LLMs)
+
+### Deployments
+
+* Vercel (Frontend)
+* Render (Backend)
+
+## Demo Link:
+
+https://ai-website-builder-mu-one.vercel.app/
 
 ---
 
@@ -258,7 +267,7 @@ Deploy the React application using:
 
 Deploy the Express API using:
 
-* Vercel
+* Render
 
 ### Database
 
