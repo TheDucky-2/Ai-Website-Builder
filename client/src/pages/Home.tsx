@@ -4,7 +4,7 @@ import React from 'react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 import api from '@/configs/axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Home = () => {
 
@@ -46,13 +46,13 @@ const Home = () => {
           {/* BACKGROUND IMAGE */}
           <img src="https://raw.githubusercontent.com/prebuiltui/prebuiltui/refs/heads/main/assets/hero/bg-gradient-2.png" className="absolute inset-0 -z-10 size-full opacity" alt="" />
 
-        <a href={`${import.meta.env.VITE_APPURL}/auth/sign-up`} className="flex items-center gap-2 border border-slate-700 rounded-full p-1 pr-3 text-sm mt-20">
+        <Link to="/auth/sign-up" className="flex items-center gap-2 border border-slate-700 rounded-full p-1 pr-3 text-sm mt-20">
           <span className="bg-indigo-600 text-xs px-3 py-1 rounded-full">NEW</span>
           <p className="flex items-center gap-2">
             <span>Try 30 days free trial option</span>
             <svg className="mt-px" width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 4 3.5L1 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
           </p>
-        </a>
+        </Link>
 
         <h1 className="text-center text-[40px] leading-12 md:text-6xl md:leading-17.5 mt-4 font-semibold max-w-3xl">
           Turn your thoughts into websites instantly, with AI.
